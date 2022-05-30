@@ -21,8 +21,8 @@ def image_crop(New_image,nbSubdivition : int = 36) -> list:
 
 # function for save all images
 def saveAllImage(numeroCalque : str,sub : list,resultat : list,imagePart : str) -> None:
-        listeNoConfirmed = ['FDC', 'AFD', 'AFJ', 'FC']
-        for element in ['AF', 'AFS', 'AFSC', 'AFC', 'FS', 'FSC', 'NC']:
+        listeNoConfirmed = ['FDC', 'AFD', 'AFJ']
+        for element in ['AF', 'AFS', 'AFSC', 'AFC', 'FS', 'FSC', 'FC', 'NC']:
             os.makedirs('./Dataexport/'+element+'/', exist_ok=True)
         for i in range(len(sub)):
             if element in listeNoConfirmed:
@@ -61,7 +61,7 @@ def main():
             page_title="Cropping",
             page_icon='✂️',
             layout="wide")
-    st.title("✂️ APP CUTTING IMAGE")
+    st.title("✂️ IMAGE CUTTING APP")
     colparametre, colimage, colsub = st.columns([2,1,1])
 
     # section to apply cropping image and save...
